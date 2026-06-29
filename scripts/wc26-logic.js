@@ -57,6 +57,7 @@
       origin = "",
       explicitApi = "",
       proxyParam = false,
+      forceProxyOnly = false,
       directUrl,
       buildProxyUrl
     } = options;
@@ -80,7 +81,10 @@
       add(buildProxyUrl(origin));
     }
 
-    add(directUrl);
+    // Nếu đang ở hosted mode (Vercel), KHÔNG gọi direct ESPN vì sẽ bị CORS block.
+    if (!(forceProxyOnly && useHostedProxy)) {
+      add(directUrl);
+    }
     return urls;
   }
 

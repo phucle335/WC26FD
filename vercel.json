@@ -88,16 +88,16 @@
   ],
   "functions": {
     "api/espn-scoreboard.js": {
-      "memory": 128,
-      "maxDuration": 10
+      "memory": 256,
+      "maxDuration": 30
     },
     "api/espn-summary.js": {
-      "memory": 128,
-      "maxDuration": 10
+      "memory": 256,
+      "maxDuration": 30
     },
     "api/livescore-stats.js": {
-      "memory": 128,
-      "maxDuration": 10
+      "memory": 256,
+      "maxDuration": 30
     }
   }
 }

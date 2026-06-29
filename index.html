@@ -6710,12 +6710,14 @@
 
     function buildEspnFetchUrls() {
       const params = new URLSearchParams(window.location.search);
+      const useHostedProxy = shouldUseHostedProxy();
       return buildEspnFetchUrlsPolicy({
         isLocalDataMode: isLocalDataMode(),
         protocol: window.location.protocol,
         origin: window.location.origin,
         explicitApi: String(params.get("api") || "").trim().replace(/\/$/, ""),
-        proxyParam: params.get("proxy") === "1" || shouldUseHostedProxy(),
+        proxyParam: params.get("proxy") === "1" || useHostedProxy,
+        forceProxyOnly: useHostedProxy,
         directUrl: buildEspnScoreboardUrl(),
         buildProxyUrl: buildEspnProxyUrl
       });

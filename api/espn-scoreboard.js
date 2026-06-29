@@ -57,7 +57,8 @@ export default async function handler(req, res) {
         Accept: "application/json",
         "User-Agent": "WC26VN-VercelProxy/1.0"
       },
-      cache: "no-store"
+      cache: "no-store",
+      redirect: "follow"
     });
 
     if (!upstream.ok) {
