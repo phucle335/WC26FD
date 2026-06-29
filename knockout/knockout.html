@@ -1,0 +1,119 @@
+<div class="ko-v2-inner knockout-page">
+  <button class="history-back ko-v2-back" type="button" id="knockout-back-btn">← Vòng bảng</button>
+
+  <div class="ko-v2-body">
+    <aside class="panel standings-panel knockout-panel knockout-panel--left ko-v2-panel ko-v2-left" aria-label="Trận đã đá và thống kê">
+      <div class="panel-head">
+        <h2 class="panel-title" id="ko-left-panel-title">Trận đã đá</h2>
+        <div class="panel-tools">
+          <div class="panel-kicker" id="ko-left-panel-kicker">LIVE · FT</div>
+        </div>
+      </div>
+      <div class="standings-scroll" id="ko-left-scroll">
+        <div id="ko-match-list-view"></div>
+        <div id="ko-match-detail-view" class="standings-overlay hidden"></div>
+        <div id="ko-player-stats-view" class="standings-overlay hidden"></div>
+      </div>
+    </aside>
+
+    <section class="panel knockout-bracket-area ko-v2-bracket-area">
+      <div class="ko-v2-bracket-scroll" id="ko-bracket-scroll">
+        <div class="knockout-bracket-stage ko-v2-bracket-stage" id="ko-bracket-stage">
+          <div class="ko-bracket-head">
+            <div class="ko-bracket-eyebrow">FIFA <span class="ko-bracket-gold">WORLD CUP 2026</span>™</div>
+            <div class="ko-bracket-sub">Road to final</div>
+          </div>
+          <svg class="knockout-bracket-connectors ko-v2-connectors" id="knockout-connectors" aria-hidden="true"></svg>
+          <div class="knockout-bracket-grid ko-v2-bracket" id="knockout-bracket">
+            <div class="ko-v2-wing ko-v2-wing-left" id="ko-wing-left"></div>
+            <div class="ko-v2-hub" id="ko-wing-center"></div>
+            <div class="ko-v2-wing ko-v2-wing-right" id="ko-wing-right"></div>
+          </div>
+          <div class="ko-v2-next-match-dock" id="ko-next-match-dock">
+            <div class="ko-v2-next-match-stack">
+              <div class="ko-v2-next-match is-clickable" id="ko-next-match-stage" role="button" tabindex="0" aria-label="Trận tiếp theo">
+                <div class="ko-next-eyebrow" id="ko-next-round">TRẬN TIẾP</div>
+                <div class="ko-next-matchup">
+                  <div class="ko-next-team-card">
+                    <div class="ko-next-flag flag-img" id="ko-next-home-flag" aria-hidden="true"></div>
+                    <div class="ko-next-team-name" id="ko-next-home-name">—</div>
+                  </div>
+                  <div class="ko-next-meta">
+                    <div class="ko-next-label" id="ko-next-vs-label">Sắp diễn ra</div>
+                    <p class="ko-next-title" id="ko-next-title">—</p>
+                    <p class="ko-next-subtitle" id="ko-next-time">—</p>
+                  </div>
+                  <div class="ko-next-team-card">
+                    <div class="ko-next-flag flag-img" id="ko-next-away-flag" aria-hidden="true"></div>
+                    <div class="ko-next-team-name" id="ko-next-away-name">—</div>
+                  </div>
+                </div>
+                <div class="ko-next-stage" id="ko-next-stage-display">
+                  <div class="ko-next-timer" id="ko-next-countdown" aria-live="polite">
+                    <div class="ko-next-time-unit">
+                      <div class="ko-next-digits" id="ko-next-hours">00</div>
+                      <div class="ko-next-unit-label">GIỜ</div>
+                    </div>
+                    <div class="ko-next-colon">:</div>
+                    <div class="ko-next-time-unit">
+                      <div class="ko-next-digits" id="ko-next-minutes">00</div>
+                      <div class="ko-next-unit-label">PHÚT</div>
+                    </div>
+                    <div class="ko-next-colon">:</div>
+                    <div class="ko-next-time-unit">
+                      <div class="ko-next-digits" id="ko-next-seconds">00</div>
+                      <div class="ko-next-unit-label">GIÂY</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ko-next-live-strip hidden" id="ko-next-live-strip" aria-live="polite">
+                <div class="ko-next-live" id="ko-next-live-board">
+                  <div class="ko-next-live-badge">Trực tiếp</div>
+                  <div class="ko-next-live-score">
+                    <div class="ko-next-time-unit ko-next-live-unit">
+                      <div class="ko-next-digits" id="ko-next-live-home-score">0</div>
+                      <div class="ko-next-unit-label" id="ko-next-live-home-short">---</div>
+                    </div>
+                    <div class="ko-next-colon ko-next-live-sep">-</div>
+                    <div class="ko-next-time-unit ko-next-live-unit">
+                      <div class="ko-next-digits" id="ko-next-live-away-score">0</div>
+                      <div class="ko-next-unit-label" id="ko-next-live-away-short">---</div>
+                    </div>
+                  </div>
+                  <div class="ko-next-live-minute" id="ko-next-live-minute">Đang đá</div>
+                </div>
+                <div class="ko-next-timeline" id="ko-next-live-timeline">
+                  <div class="live-timeline-head">Sự kiện trận đấu</div>
+                  <div class="live-timeline-list" id="ko-next-timeline-list"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel fixtures-panel knockout-panel upcoming-matches-panel knockout-panel--right ko-v2-right">
+      <div class="panel-head">
+        <h2 class="panel-title" id="ko-right-panel-title">VÒNG 32</h2>
+        <div class="panel-tools">
+          <div class="group-controls" id="ko-round-controls" aria-label="Chuyển vòng knockout">
+            <button class="group-button active" type="button" data-ko-list-round="0" aria-label="ROUND OF 32" aria-current="true">R32</button>
+            <button class="group-button" type="button" data-ko-list-round="1" aria-label="ROUND OF 16">R16</button>
+            <button class="group-button" type="button" data-ko-list-round="2" aria-label="QUARTER-FINAL">QF</button>
+            <button class="group-button" type="button" data-ko-list-round="3" aria-label="SEMI-FINAL">SF</button>
+            <button class="group-button" type="button" data-ko-list-round="4" aria-label="FINAL">FINAL</button>
+          </div>
+          <div class="group-controls" id="ko-upcoming-page-controls" aria-label="Trang lịch thi đấu"></div>
+          <div class="panel-kicker" id="ko-right-panel-kicker">ROUND OF 32</div>
+          <div class="panel-kicker" id="knockout-data-status">PREVIEW</div>
+        </div>
+      </div>
+      <div class="fixtures-list" id="ko-upcoming"></div>
+    </aside>
+  </div>
+  <div class="ko-v2-local-clock-wrap" aria-hidden="false">
+    <div class="ko-v2-local-clock" id="ko-local-clock">Giờ VN · —</div>
+  </div>
+</div>

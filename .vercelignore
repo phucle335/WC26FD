@@ -1,0 +1,41 @@
+# Dev / test / build artifacts that must not be uploaded to Vercel.
+# Không ignore cả thư mục `scripts/` vì index.html load nhiều JS từ đó
+# (wc26-logic.js, knockout-*, standings-rank.js,...). Chỉ loại các file
+# build/dev/test nằm trong `scripts/`.
+node_modules
+test-results
+
+scripts/build-annex-c.js
+scripts/debug-bracket.js
+scripts/dev-server.js
+scripts/validate-bracket.js
+scripts/verify-knockout.js
+scripts/knockout-annex-c-source.mjs
+
+fix_espn.js
+fix_espn2.js
+fix_ivory.js
+fix_quotes.js
+README.md
+README_DEPLOY.md
+.vercelignore
+.git
+.gitignore
+.gitattributes
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea
+.vscode
+*.swp
+*.swo
+.env
+.env.local
+.env.*.local
+playwright-report
+test
+tests
+coverage
+*.tsbuildinfo

@@ -1,0 +1,28 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Wallpaper World Cup 2026 trực tiếp : bảng xếp hạng, 5 trận tiếp theo, cờ đội và cập nhật tỷ số theo Giờ Việt Nam (UTC+7).\nUpdate: Knockout stage",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"tags" : [ "Sports" ],
+	"title" : "WC26VN",
+	"type" : "Web",
+	"version" : 19,
+	"visibility" : "public",
+	"workshopid" : "3745494067",
+	"workshopurl" : "steam://url/CommunityFilePage/3745494067"
+}

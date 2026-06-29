@@ -1,0 +1,85 @@
+{
+  "version": 2,
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/ko",
+      "destination": "/index.html?ko=1"
+    },
+    {
+      "source": "/preview",
+      "destination": "/preview.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)\\.(js|css|woff2?|ttf|svg|png|jpg|jpeg|webp|ico)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/flags/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=()"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=30, stale-while-revalidate=60"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "api/espn-scoreboard.js": {
+      "memory": 128,
+      "maxDuration": 10
+    },
+    "api/espn-summary.js": {
+      "memory": 128,
+      "maxDuration": 10
+    },
+    "api/livescore-stats.js": {
+      "memory": 128,
+      "maxDuration": 10
+    }
+  }
+}
