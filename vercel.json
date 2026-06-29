@@ -33,6 +33,24 @@
       ]
     },
     {
+      "source": "/scripts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=60, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=60, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/(.*)\\.(js|css|woff2?|ttf|svg|png|jpg|jpeg|webp|ico)",
       "headers": [
         {
